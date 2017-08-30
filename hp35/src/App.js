@@ -3,23 +3,37 @@ import './App.css';
 
 class App extends React.Component {
   state = {
-    displayValue: '0'
+    value : null,
+    displayValue: '0',
+    waitingForOperator : false,
+    operator : null
   }
 
   inputDigit(digit) {
-    const { displayValue } = this.state
+    const { displayValue, waitingForOperator } = this.state
 
-    this.setState({
-      displayValue: displayValue === '0' ? String(digit) : displayValue + digit
-    })
+    if (waitingForOperator) {
+        this.setState({ 
+            displayValue : String(digit),
+            waitingForOperator : false
+        })
+    } else {
+      this.setState({displayValue: displayValue === '0' ? String(digit) : displayValue + digit})
+    }  
   }
 
   inputDot() {
-    const { displayValue } = this.state
+    const { displayValue, waitingForOperator } = this.state
 
-    if(displayValue.indexOf('.') === -1 ) {
-    this.setState({
-        displayValue : displayValue + '.'
+      if(waitingForOperator) {
+        this.setState ({
+            displayValue : String('.'),
+            waitingForOperator : false
+        })
+      } else if(displayValue.indexOf('.') === -1 ) {
+        this.setState({
+            displayValue : displayValue + '.',
+            waitingForOperator: false
       })
     }
   }
@@ -30,9 +44,43 @@ class App extends React.Component {
     this.setState({ displayValue : '0'})
   }
 
-  executeOperation(operator) {
-    this.setState({  })
+
+
+  executeOperation(nextOperator) {
+    const { value, displayValue, operator } = this.state
+    const nextValue = parseFloat(displayValue)
+
+    const operations = {
+        '/': (prevValue, nextValue) => prevValue / nextValue,
+        '*': (prevValue, nextValue) => prevValue * nextValue,
+        '+': (prevValue, nextValue) => prevValue + nextValue,
+        '-': (prevValue, nextValue) => prevValue - nextValue,
+        '=': (prevValue, nextValue) => nextValue
+    }
+ 
+    if (value == null) {
+      this.setState({
+        value: nextValue
+      }) 
+    } else if (operator) {
+      const currentValue = value || 0
+      const calculatedValue = operations[operator](currentValue, nextValue)
+
+      this.setState({
+        value: calculatedValue,
+        displayValue: String(calculatedValue)
+      })
+    }
+
+
+    this.setState({ 
+        waitingForOperator : true,
+        operator : nextOperator
+     })
   }
+
+
+
 
   render() {
     const { displayValue } = this.state
@@ -63,7 +111,7 @@ class App extends React.Component {
             <button className="calculator-operator-key" onClick={() => this.executeOperation('/')}>÷</button>  
             <button className="calculator-digit-key" onClick={() => this.inputDigit(0)}>0</button>
             <button className="calculator-digit-key" onClick={() => this.inputDot()}>.</button>
-            <button className="calculator-digit-key">π</button>
+            <button className="calculator-digit-key" onClick={() => this.executeOperation('=')}>=</button>
         </div>
       </div>
     );
