@@ -30,7 +30,7 @@ export default class DigitsKeys extends React.Component {
               <button className="calculator-digit-key" onClick={() => action.inputDigit(0)}>0</button>
               <button className="calculator-digit-key" onClick={() => action.inputDot()}>.</button>
               <button className="calculator-digit-key" onClick={() => action.inputDigit(3.14159)}>π</button>
-            </div>
+      </div>
   		)
   }	
 }

@@ -1,7 +1,6 @@
 import React from 'react'
 import './App.css'
 import store from './store'
-import * as action from './actions/actions'
 import DisplayScreen from './components/DisplayScreen'
 import FunctionKeys from './components/FunctionKeys'
 import OperatorsKeys from './components/OperatorsKeys'
@@ -27,11 +26,11 @@ class App extends React.Component {
       <div className="calculator">
         <DisplayScreen />
           <FunctionKeys />
-          <div className="calculator-digits-operators-div">
-            <OperatorsKeys />
-            <DigitsKeys />            
-          </div>  
-        </div>
+            <div className="calculator-digits-operators-div">
+              <OperatorsKeys />
+              <DigitsKeys />            
+            </div>  
+      </div>
     );
   }
 }

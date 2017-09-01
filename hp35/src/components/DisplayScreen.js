@@ -2,7 +2,6 @@ import React from 'react'
 import './DisplayScreen.css'
 import store from '../store'
 
-
 export default class DisplayScreen extends React.Component {
 
   componentWillMount() {
@@ -19,11 +18,11 @@ export default class DisplayScreen extends React.Component {
 		const { displayValueX, displayValueY, displayValueZ, displayValueT } = this.state
 		return (
 			<div className="calculator-display">
-        		<p>{ displayValueT }</p>
-        		<p>{ displayValueZ }</p>
-        		<p>{ displayValueY }</p>
-        		<p>{ displayValueX }</p>
-        	</div>
+        <p>{ displayValueT }</p>
+        <p>{ displayValueZ }</p>
+        <p>{ displayValueY }</p>
+        <p>{ displayValueX }</p>
+      </div>
 			)
 	}
 }

@@ -4,6 +4,7 @@ import store from '../store'
 import * as action from '../actions/actions'
 
 export default class OperatorsKeys extends React.Component {
+  
   componentWillMount() {
     this.subscription = store.subscribe(state => {
       this.setState(state)
@@ -16,12 +17,12 @@ export default class OperatorsKeys extends React.Component {
 
   render() {
   	return(
-            <div className="calculator-input-operators-keys">
-              <button className="calculator-operator-key">-</button>
-              <button className="calculator-operator-key">+</button>
-              <button className="calculator-operator-key">x</button>
-              <button className="calculator-operator-key">÷</button>
-            </div>    
+      <div className="calculator-input-operators-keys">
+        <button className="calculator-operator-key">-</button>
+        <button className="calculator-operator-key">+</button>
+        <button className="calculator-operator-key">x</button>
+        <button className="calculator-operator-key">÷</button>
+      </div>    
   		)
   }
  } 
