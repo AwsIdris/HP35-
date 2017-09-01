@@ -1,0 +1,15 @@
+.calculator-function-keys-div {
+  margin:0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.calculator-key-function{
+  margin:10px ;
+  color:#FFFFFF;
+  font-size: 20px;
+  border: none;
+  width :60px;
+  height: 30px;
+  background-color:#D08504;
+}
