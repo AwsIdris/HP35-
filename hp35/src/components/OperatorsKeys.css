@@ -1,0 +1,16 @@
+.calculator-input-operators-keys {
+  display: flex;
+  flex-direction: column;
+  margin:5px;
+}
+
+.calculator-operator-key{
+  background-color: #D08504;
+  border: none;
+  margin: 5px;
+  width :50px;
+  height:30px;
+  color: white;
+  text-align: center;
+  font-size: 25px;
+}
