@@ -15,7 +15,7 @@ export default class FunctionKeys extends React.Component {
         <button className="calculator-key-function" onClick={() => action.clearDisplay()}>CLR</button>
         <button className="calculator-key-function" >&#8730; x</button>
         <button className="calculator-key-function" >ARC</button>
-        <button className="calculator-key-function" >SIM</button>
+        <button className="calculator-key-function" >SIN</button>
         <button className="calculator-key-function" >COS</button>
         <button className="calculator-key-function" >TAN</button>
         <button className="calculator-key-function" ><sup>1</sup>/x</button>
