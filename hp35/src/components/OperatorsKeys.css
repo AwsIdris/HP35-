@@ -13,4 +13,7 @@
   color: white;
   text-align: center;
   font-size: 25px;
+  text-shadow: -0.5px 1px #C21026;
+  border-radius: 5%;
+  box-shadow: 0 2px #C21026;
 }
