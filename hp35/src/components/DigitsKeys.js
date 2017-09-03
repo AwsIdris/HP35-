@@ -2,18 +2,13 @@ import React from 'react'
 import './DigitsKeys.css'
 import store from '../store'
 import * as action from '../actions/actions'
+import PropTypes from 'prop-types'
 
 export default class DigitsKeys extends React.Component {
 
-  componentWillMount() {
-    this.subscription = store.subscribe(state => {
-      this.setState(state)
-    })
-  }
-
-  componentWillUnmount() {
-    this.subscription.remove();
-  }
+  static propTypes = {
+    onClick : PropTypes.func.isRequired
+  } 
 
   render() {
   	return (

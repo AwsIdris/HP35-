@@ -12,4 +12,21 @@
   width :60px;
   height: 30px;
   background-color:#D08504;
+  border-radius: 5%;
+  text-shadow: -0.5px 1px #C21026;
+  box-shadow: 0 2px #C21026;
+
+}
+ 
+.calculator-key-Enter {
+  margin:10px ;
+  color:#FFFFFF;
+  font-size: 20px;
+  border: none;
+  width :140px;
+  height: 30px;
+  background-color:#D08504;
+  border-radius: 4%;
+  text-shadow: -0.5px 1px #C21026;
+  box-shadow: 0 2px #C21026;  
 }

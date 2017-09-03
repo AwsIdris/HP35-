@@ -3,6 +3,7 @@ import store from '../store'
 export function clearDisplay() {
 	
     store.setState({ displayValueX : '0'})
+    
   }
 
 

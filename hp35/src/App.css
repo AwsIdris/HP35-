@@ -5,17 +5,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #355842; 
-}
-
-.calculator-key-Enter {
-  margin:10px ;
-  color:#FFFFFF;
-  font-size: 20px;
-  border: none;
-  width :140px;
-  height: 30px;
-  background-color:#D08504;  
+  background: #355842;
+  border-radius: 0px 0px 20px 20px;
+  box-shadow: 0 5px #029D74; 
 }
 
 .calculator-digits-operators-div{
