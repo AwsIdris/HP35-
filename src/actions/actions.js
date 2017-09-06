@@ -23,12 +23,10 @@ export function inputDot() {
       if(waitingForOperator) {
         store.setState ({
             displayValueX : String('0.'),
-            waitingForOperator : false
         })
       } else if(decimal === -1 ) {
         store.setState({
             displayValueX : displayValueX + '.',
-            waitingForOperator: false
       })
     }
     //console.log(decimal)
