@@ -1,37 +1,31 @@
 import React from 'react'
 import './App.css'
-import store from './store'
+import store from './components/store'
 import DisplayScreen from './components/DisplayScreen'
-import FunctionKeys from './components/FunctionKeys'
-import OperatorsKeys from './components/OperatorsKeys'
-import DigitsKeys from './components/DigitsKeys'
+import KeyBoard from './components/KeyBoard'
+import ProgramPlatform from './components/ProgramPlatform'
 
 
 class App extends React.Component {
-
-  componentWillMount() {
-    this.subscription = store.subscribe(state => {
+  componentWillMount(){
+    store.subscription = store.subscribe(state=>{
       this.setState(state)
     })
   }
-
-  componentWillUnmount() {
-    this.subscription.remove();
-  }
+  componentWillUnmount(){
+   store.subscription.remove();
+ }
 
   render() {
-    const { displayValueX, displayValueY, displayValueZ, displayValueT } = this.state
-
     return (
-      <div className="calculator">
-        <DisplayScreen />
-          <FunctionKeys />
-            <div className="calculator-digits-operators-div">
-              <OperatorsKeys />
-              <DigitsKeys />            
-            </div>  
-      </div>
-    );
+      <div className="calculatorBody">
+        <div>
+       <DisplayScreen />
+       <KeyBoard />
+        </div>
+          <ProgramPlatform /> 
+      </div>  
+    )
   }
 }
 
