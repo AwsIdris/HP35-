@@ -1,6 +1,6 @@
 import store from '../components/store'
 
-export function operations(label, keyCode) {
+export function operations(keyCode ,label) {
   checkLabelAndKeyCode()
   let [x, y, z, t] = store.state.stack,
     localStack = [x, y, z, t],
