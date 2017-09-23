@@ -15,7 +15,7 @@ export default class CalculatorKey extends React.Component {
 		const {label, keyCode} = this.props
 
 		return(
-			<button className={`CalculatorKey KeyPad-${keyCode}`} onClick={() => action.operations(label, keyCode)}>
+			<button className={`CalculatorKey KeyPad-${keyCode}`} onClick={() => action.operations(keyCode ,label)}>
 				{label}
 			</button>	
 			)

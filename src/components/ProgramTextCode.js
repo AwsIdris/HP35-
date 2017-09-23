@@ -1,0 +1,1 @@
+const textCode = [{keyCode:'sin',buttonCode:'SIN'},{keyCode:'cos',buttonCode:'COS'}]
