@@ -1,6 +1,6 @@
 import React from 'react'
 import './DisplayScreen.css'
-import store from '../store'
+import store from './store'
 
 export default class DisplayScreen extends React.Component {
 
@@ -15,14 +15,16 @@ export default class DisplayScreen extends React.Component {
   }
 
 	render() {
-		const { displayValueX, displayValueY, displayValueZ, displayValueT } = this.state
+
 		return (
-			<div className="calculator-display">
-        <p>{ displayValueT }</p>
-        <p>{ displayValueZ }</p>
-        <p>{ displayValueY }</p>
-        <p>{ displayValueX }</p>
-      </div>
+			<div className="calculator-display1">
+          <div className="calculator-display">
+            <div className="stackDiv">{store.state.stack[3]}</div>
+            <div className="stackDiv">{store.state.stack[2]}</div>
+            <div className="stackDiv">{store.state.stack[1]}</div>
+            <div className="stackDiv">{store.state.stack[0]}</div>
+         </div>
+        </div>
 			)
 	}
 }
