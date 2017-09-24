@@ -4,9 +4,9 @@ import store from './store'
 import programOperation from './ProgramOperation'
 
 export default class ProgramPlatform extends React.Component {
-componentWillMount() {
+  componentWillMount() {
     this.subscription = store.subscribe(state => {
-       this.setState(state)
+      this.setState(state)
     })
   }
 
@@ -16,7 +16,7 @@ componentWillMount() {
 
   handleChange(event) {
     store.setState({
-      textAreaValue: event.target.value,
+      textAreaValue: event.target.value
     })
   }
 
@@ -25,21 +25,24 @@ componentWillMount() {
     event.preventDefault()
   }
 
-        render(){
-            return (
-              <div>
-                <form onSubmit={this.handleSubmit}>
-                <div className='programWindow1'>
-                        <textarea className='textArea' rows='30' cols="36" id='textarea' value={store.state.textAreaValue} onChange={this.handleChange}></textarea>
-                    <div>
-                        <input type="submit" value="Run" className='run-button'/>     
-                    </div>  
-                </div> 
-                </form>
-              </div>
-                          
-            )
-        }       
+  handleClear() {
+    store.setState({
+      textAreaValue: ''
+    })
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <div className='programWindow1'>
+          <textarea className='textArea' rows='30' cols="36" id='textarea' value={store.state.textAreaValue} onChange={this.handleChange}></textarea>
+          <div>
+            <input type="submit" value="Run" className='run-button' />
+            <button className='clear-button' onClick={this.handleClear}> Clear </button>
+          </div>
+        </div>
+      </form>
+    )
+  }
 }
 
-    

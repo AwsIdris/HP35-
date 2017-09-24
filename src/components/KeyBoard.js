@@ -57,7 +57,7 @@ export default class KeyBoard extends React.Component {
 			  </div>
 			  <div>
 			  	<CalculatorKey label='÷' keyCode={C.DIV} />
-				<CalculatorKey label='v' keyCode={C.ADD} />  
+				<CalculatorKey label='?' keyCode={C.ADD} />  
 			  	<CalculatorKey label='0' keyCode={C.D0} />
 			  	<CalculatorKey label='.' keyCode={C.DOT} />
 			  	<CalculatorKey label='π' keyCode={C.PI} />
