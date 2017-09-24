@@ -129,10 +129,11 @@ export function operations(keyCode ,label) {
       operation = keyCode
       reOrderBasicOperation()
       break
-    case "dot":
-      var strn = (x).toString();
+    case ".":
+      var strn = (x).toString()
       if (!(strn).includes('.')) {
         localStack[0] = x + '.'
+        console.log(keyCode)
       }
       break
     case 'arc':
