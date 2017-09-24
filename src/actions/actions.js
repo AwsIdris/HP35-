@@ -16,7 +16,7 @@ export function operations(keyCode ,label) {
     })
   }
   if (Number(keyCode) && store.state.lastValue !== null &&
-    store.state.keypressed === 'sin' ||
+    (store.state.keypressed === 'sin' ||
     store.state.keypressed === 'cos' ||
     store.state.keypressed === 'tan' ||
     store.state.keypressed === 'add' ||
@@ -33,7 +33,7 @@ export function operations(keyCode ,label) {
     store.state.keypressed === 'sto' ||
     store.state.keypressed === 'rcl' ||
     store.state.keypressed === 'rollDown' ||
-    store.state.keypressed === 'swap') {
+    store.state.keypressed === 'swap')) {
     localStack = [x, x, y, z]
     localStack[0] = '';
     operation = null
@@ -57,18 +57,18 @@ export function operations(keyCode ,label) {
   //else if(store.state.keypressed ==="eex" && and )
   checkLabelAndKeyCode()
   if (Number(keyCode) && store.state.lastValue === null) {
-    console.log("++++++++++++++++++++++++++++++")
+    // console.log("++++++++++++++++++++++++++++++")
     localLastValue = label
     localStack[0] = '';
     localStack[0] = localStack[0] + label.toString()
-    console.log('Key Pressed is a number=', label)
+    // console.log('Key Pressed is a number=', label)
   } else if (Number(keyCode) && store.state.lastValue !== null) {
     localStack[0] = localStack[0] + label.toString()
   }
   switch (keyCode) {
     case "clr":
       localStack = [0, 0, 0, 0]
-      operation = '',
+      operation = ''
       localLastValue = null
 
       break
@@ -168,7 +168,7 @@ export function operations(keyCode ,label) {
       operation = keyCode
       break
     case 'pow':
-      localStack = [Math.pow(x, y), z, t, t]
+      localStack = [Math.pow(y, x), z, t, t]
       operation = keyCode
       break
     case 'sqrt':
@@ -262,18 +262,18 @@ export function operations(keyCode ,label) {
   function setCharAt(str, index) {
     console.log("str:", str, "  Index : ", index)
     if (str[index] === '+') {
-      console.log(str.substr(0, index) + '-' + str.substr(index + 1))
+      // console.log(str.substr(0, index) + '-' + str.substr(index + 1))
       operation = "eex"
       return str.substr(0, index) + '-' + str.substr(index + 1);
     } else {
-      console.log(str.substr(0, index) + '-' + str.substr(index + 1))
+      // console.log(str.substr(0, index) + '-' + str.substr(index + 1))
       operation = "eex"
       return str.substr(0, index) + '+' + str.substr(index + 1);
     }
   }
   function checkLabelAndKeyCode() {
-    console.log("label=", label, "--keycode", keyCode, "LastValu=", store.state.lastValue)
-    console.log("============================")
+    // console.log("label=", label, "--keycode", keyCode, "LastValu=", store.state.lastValue)
+    // console.log("============================")
   }
-  console.log("The End of Operation File")
+  // console.log("The End of Operation File")
 }

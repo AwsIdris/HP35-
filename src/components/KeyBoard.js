@@ -5,7 +5,7 @@ import * as C from './KeyCodes'
 export default class KeyBoard extends React.Component {
 	render() {
 		return (
-		<div className="mathtable">	
+		<div className="mathTable">	
 			<div className='KeyBoardPad'>
 			  <div>
 			  	<CalculatorKey label='xʸ' keyCode={C.POW}/>
@@ -36,24 +36,28 @@ export default class KeyBoard extends React.Component {
 			  </div>
 			  <div>
 			  	<CalculatorKey label='-' keyCode={C.SUB} />
+				<CalculatorKey label='g' keyCode={C.SUB} />  
 			  	<CalculatorKey label='7' keyCode={C.D7} />
 			  	<CalculatorKey label='8' keyCode={C.D8} />
 			  	<CalculatorKey label='9' keyCode={C.D9} />
 			  </div>
 			  <div>
 			  	<CalculatorKey label='+' keyCode={C.ADD} />
+				<CalculatorKey label='c' keyCode={C.ADD} />   
 			  	<CalculatorKey label='4' keyCode={C.D4} />
 			  	<CalculatorKey label='5' keyCode={C.D5} />
 			  	<CalculatorKey label='6' keyCode={C.D6} />
 			  </div>
 			  <div>
 			  	<CalculatorKey label='×' keyCode={C.MUL} />
+				<CalculatorKey label='h' keyCode={C.ADD} />  
 			  	<CalculatorKey label='1' keyCode={C.D1} />
 			  	<CalculatorKey label='2' keyCode={C.D2} />
 			  	<CalculatorKey label='3' keyCode={C.D3} />
 			  </div>
 			  <div>
 			  	<CalculatorKey label='÷' keyCode={C.DIV} />
+				<CalculatorKey label='v' keyCode={C.ADD} />  
 			  	<CalculatorKey label='0' keyCode={C.D0} />
 			  	<CalculatorKey label='.' keyCode={C.DOT} />
 			  	<CalculatorKey label='π' keyCode={C.PI} />

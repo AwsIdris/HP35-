@@ -1,18 +1,18 @@
 .calculator-display {
   letter-spacing: 2px;  font-family: Orbitron;
-  background-color: #1E0309;
-  width:296px;
+  background-color: #120004; 
+  color:#CE354A;
+  text-shadow: 0px 0px 3px ;  
+  box-shadow: 1px 4px 7px #10171C;
+  width:346px;
   height: 23%;
   margin: 0;
-  color:#CE354A;
   padding:17px ;
   font-size: 18px;
   text-align: left;
-  text-shadow: 0px 0px 3px ;  
-    box-shadow: 1px 4px 7px #10171C;
   border-radius: 7px 7px 0px 0px;
-
-  border-bottom:none;
+  border: 1px solid #10171C;
+  border-bottom: none;
 }
 
 .stackDiv {
